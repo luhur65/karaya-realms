@@ -1,0 +1,2580 @@
+{
+ "version": 1,
+ "generated_by": "tools/slice_sprites.py",
+ "conventions": {
+  "coordinates": "three.js: Y up, ground is the XZ plane. 1 world unit ~ 1 metre; a player is ~2.3 units tall.",
+  "anchor": "bottom-center: put the sprite position at the feet / base; in three.js Sprite.center = (0.5, 0).",
+  "atlas_uv": "For atlas sheets: texture.repeat = (1/cols, 1/rows); offset = (col/cols, 1 - (row+1)/rows).",
+  "world_height": "Suggested on-screen height in world units; width = height * (cell_w / cell_h).",
+  "billboard": "cylindrical = always faces the camera around the Y axis (THREE.Sprite is fine).",
+  "filtering": "Pixel art: NearestFilter for magFilter keeps crisp pixels; alphaTest 0.5 (alpha is hard 0/255).",
+  "facing_rows_character": "front=towards camera, back=away, left/right=screen-left/right.",
+  "facing_rows_monster": "front, side, back; side is drawn facing `side_faces`, mirror for the other side."
+ },
+ "sprites": [
+  {
+   "id": "hero_male",
+   "category": "character",
+   "description": "Petualang pria rambut coklat, rompi kulit (pemain).",
+   "source": "male_object",
+   "atlas": "assets/atlas/hero_male.png",
+   "cell": [
+    86,
+    151
+   ],
+   "grid": [
+    4,
+    8
+   ],
+   "anchor": "bottom-center",
+   "world_height": 2.3,
+   "rows": {
+    "front": 0,
+    "left": 1,
+    "right": 2,
+    "back": 3,
+    "attack_front": 4,
+    "attack_left": 5,
+    "attack_right": 6,
+    "attack_back": 7
+   },
+   "anims": {
+    "idle": {
+     "cols": [
+      0
+     ],
+     "fps": 1
+    },
+    "walk": {
+     "cols": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "fps": 8
+    },
+    "attack": {
+     "cols": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "fps": 16,
+     "row_offset": 4
+    }
+   },
+   "notes": "Rows 0-3 walk (front=towards camera), rows 4-7 attack in the same direction order. Attack frames are derived from the walk art (lean back -> lunge -> follow-through -> recover); pair them with the held weapon sprite and fx_slash.",
+   "frames": {
+    "front_0": "assets/sprites/characters/hero_male/front_0.png",
+    "front_1": "assets/sprites/characters/hero_male/front_1.png",
+    "front_2": "assets/sprites/characters/hero_male/front_2.png",
+    "front_3": "assets/sprites/characters/hero_male/front_3.png",
+    "left_0": "assets/sprites/characters/hero_male/left_0.png",
+    "left_1": "assets/sprites/characters/hero_male/left_1.png",
+    "left_2": "assets/sprites/characters/hero_male/left_2.png",
+    "left_3": "assets/sprites/characters/hero_male/left_3.png",
+    "right_0": "assets/sprites/characters/hero_male/right_0.png",
+    "right_1": "assets/sprites/characters/hero_male/right_1.png",
+    "right_2": "assets/sprites/characters/hero_male/right_2.png",
+    "right_3": "assets/sprites/characters/hero_male/right_3.png",
+    "back_0": "assets/sprites/characters/hero_male/back_0.png",
+    "back_1": "assets/sprites/characters/hero_male/back_1.png",
+    "back_2": "assets/sprites/characters/hero_male/back_2.png",
+    "back_3": "assets/sprites/characters/hero_male/back_3.png",
+    "attack_front_0": "assets/sprites/characters/hero_male/attack_front_0.png",
+    "attack_front_1": "assets/sprites/characters/hero_male/attack_front_1.png",
+    "attack_front_2": "assets/sprites/characters/hero_male/attack_front_2.png",
+    "attack_front_3": "assets/sprites/characters/hero_male/attack_front_3.png",
+    "attack_left_0": "assets/sprites/characters/hero_male/attack_left_0.png",
+    "attack_left_1": "assets/sprites/characters/hero_male/attack_left_1.png",
+    "attack_left_2": "assets/sprites/characters/hero_male/attack_left_2.png",
+    "attack_left_3": "assets/sprites/characters/hero_male/attack_left_3.png",
+    "attack_right_0": "assets/sprites/characters/hero_male/attack_right_0.png",
+    "attack_right_1": "assets/sprites/characters/hero_male/attack_right_1.png",
+    "attack_right_2": "assets/sprites/characters/hero_male/attack_right_2.png",
+    "attack_right_3": "assets/sprites/characters/hero_male/attack_right_3.png",
+    "attack_back_0": "assets/sprites/characters/hero_male/attack_back_0.png",
+    "attack_back_1": "assets/sprites/characters/hero_male/attack_back_1.png",
+    "attack_back_2": "assets/sprites/characters/hero_male/attack_back_2.png",
+    "attack_back_3": "assets/sprites/characters/hero_male/attack_back_3.png"
+   }
+  },
+  {
+   "id": "hero_female",
+   "category": "character",
+   "description": "Petualang wanita rambut kuncir kuda, syal merah (pemain).",
+   "source": "female_object",
+   "atlas": "assets/atlas/hero_female.png",
+   "cell": [
+    96,
+    152
+   ],
+   "grid": [
+    4,
+    8
+   ],
+   "anchor": "bottom-center",
+   "world_height": 2.3,
+   "rows": {
+    "front": 0,
+    "left": 1,
+    "right": 2,
+    "back": 3,
+    "attack_front": 4,
+    "attack_left": 5,
+    "attack_right": 6,
+    "attack_back": 7
+   },
+   "anims": {
+    "idle": {
+     "cols": [
+      0
+     ],
+     "fps": 1
+    },
+    "walk": {
+     "cols": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "fps": 8
+    },
+    "attack": {
+     "cols": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "fps": 16,
+     "row_offset": 4
+    }
+   },
+   "notes": "Rows 0-3 walk (front=towards camera), rows 4-7 attack in the same direction order. Attack frames are derived from the walk art (lean back -> lunge -> follow-through -> recover); pair them with the held weapon sprite and fx_slash.",
+   "frames": {
+    "front_0": "assets/sprites/characters/hero_female/front_0.png",
+    "front_1": "assets/sprites/characters/hero_female/front_1.png",
+    "front_2": "assets/sprites/characters/hero_female/front_2.png",
+    "front_3": "assets/sprites/characters/hero_female/front_3.png",
+    "left_0": "assets/sprites/characters/hero_female/left_0.png",
+    "left_1": "assets/sprites/characters/hero_female/left_1.png",
+    "left_2": "assets/sprites/characters/hero_female/left_2.png",
+    "right_0": "assets/sprites/characters/hero_female/right_0.png",
+    "right_1": "assets/sprites/characters/hero_female/right_1.png",
+    "right_2": "assets/sprites/characters/hero_female/right_2.png",
+    "back_0": "assets/sprites/characters/hero_female/back_0.png",
+    "back_1": "assets/sprites/characters/hero_female/back_1.png",
+    "back_2": "assets/sprites/characters/hero_female/back_2.png",
+    "back_3": "assets/sprites/characters/hero_female/back_3.png",
+    "attack_front_0": "assets/sprites/characters/hero_female/attack_front_0.png",
+    "attack_front_1": "assets/sprites/characters/hero_female/attack_front_1.png",
+    "attack_front_2": "assets/sprites/characters/hero_female/attack_front_2.png",
+    "attack_front_3": "assets/sprites/characters/hero_female/attack_front_3.png",
+    "attack_left_0": "assets/sprites/characters/hero_female/attack_left_0.png",
+    "attack_left_1": "assets/sprites/characters/hero_female/attack_left_1.png",
+    "attack_left_2": "assets/sprites/characters/hero_female/attack_left_2.png",
+    "attack_left_3": "assets/sprites/characters/hero_female/attack_left_3.png",
+    "attack_right_0": "assets/sprites/characters/hero_female/attack_right_0.png",
+    "attack_right_1": "assets/sprites/characters/hero_female/attack_right_1.png",
+    "attack_right_2": "assets/sprites/characters/hero_female/attack_right_2.png",
+    "attack_right_3": "assets/sprites/characters/hero_female/attack_right_3.png",
+    "attack_back_0": "assets/sprites/characters/hero_female/attack_back_0.png",
+    "attack_back_1": "assets/sprites/characters/hero_female/attack_back_1.png",
+    "attack_back_2": "assets/sprites/characters/hero_female/attack_back_2.png",
+    "attack_back_3": "assets/sprites/characters/hero_female/attack_back_3.png"
+   }
+  },
+  {
+   "id": "slime",
+   "category": "monster",
+   "description": "Slime hijau (lendir).",
+   "source": "all monster/slimes/Lembar Sprite Animasi Slime Hijau.png",
+   "atlas": "assets/atlas/slime.png",
+   "cell": [
+    252,
+    202
+   ],
+   "grid": [
+    4,
+    3
+   ],
+   "anchor": "bottom-center",
+   "world_height": 1.3,
+   "rows": {
+    "front": 0,
+    "side": 1,
+    "back": 2
+   },
+   "side_faces": "left",
+   "anims": {
+    "idle": {
+     "cols": [
+      0
+     ],
+     "fps": 1
+    },
+    "walk": {
+     "cols": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "fps": 7
+    }
+   },
+   "notes": "Side row is drawn facing left; mirror it (repeat.x = -1/cols) for the other side.",
+   "frames": {
+    "front_0": "assets/sprites/monsters/slime/front_0.png",
+    "front_1": "assets/sprites/monsters/slime/front_1.png",
+    "front_2": "assets/sprites/monsters/slime/front_2.png",
+    "front_3": "assets/sprites/monsters/slime/front_3.png",
+    "side_0": "assets/sprites/monsters/slime/side_0.png",
+    "side_1": "assets/sprites/monsters/slime/side_1.png",
+    "side_2": "assets/sprites/monsters/slime/side_2.png",
+    "side_3": "assets/sprites/monsters/slime/side_3.png",
+    "back_0": "assets/sprites/monsters/slime/back_0.png",
+    "back_1": "assets/sprites/monsters/slime/back_1.png",
+    "back_2": "assets/sprites/monsters/slime/back_2.png",
+    "back_3": "assets/sprites/monsters/slime/back_3.png"
+   }
+  },
+  {
+   "id": "wolf",
+   "category": "monster",
+   "description": "Serigala abu-abu.",
+   "source": "all monster/wolf/Sprite Serigala Pixel 3x4 Animasi.png",
+   "atlas": "assets/atlas/wolf.png",
+   "cell": [
+    228,
+    202
+   ],
+   "grid": [
+    4,
+    3
+   ],
+   "anchor": "bottom-center",
+   "world_height": 2.0,
+   "rows": {
+    "front": 0,
+    "side": 1,
+    "back": 2
+   },
+   "side_faces": "left",
+   "anims": {
+    "idle": {
+     "cols": [
+      0
+     ],
+     "fps": 1
+    },
+    "walk": {
+     "cols": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "fps": 7
+    }
+   },
+   "notes": "Side row is drawn facing left; mirror it (repeat.x = -1/cols) for the other side.",
+   "frames": {
+    "front_0": "assets/sprites/monsters/wolf/front_0.png",
+    "front_1": "assets/sprites/monsters/wolf/front_1.png",
+    "front_2": "assets/sprites/monsters/wolf/front_2.png",
+    "front_3": "assets/sprites/monsters/wolf/front_3.png",
+    "side_0": "assets/sprites/monsters/wolf/side_0.png",
+    "side_1": "assets/sprites/monsters/wolf/side_1.png",
+    "side_2": "assets/sprites/monsters/wolf/side_2.png",
+    "side_3": "assets/sprites/monsters/wolf/side_3.png",
+    "back_0": "assets/sprites/monsters/wolf/back_0.png",
+    "back_1": "assets/sprites/monsters/wolf/back_1.png",
+    "back_2": "assets/sprites/monsters/wolf/back_2.png",
+    "back_3": "assets/sprites/monsters/wolf/back_3.png"
+   }
+  },
+  {
+   "id": "goblin",
+   "category": "monster",
+   "description": "Goblin hijau dengan gada kayu.",
+   "source": "all monster/goblin/Lembar Sprite Goblin Pixel Art Isometrik.png",
+   "atlas": "assets/atlas/goblin.png",
+   "cell": [
+    196,
+    202
+   ],
+   "grid": [
+    4,
+    3
+   ],
+   "anchor": "bottom-center",
+   "world_height": 2.0,
+   "rows": {
+    "front": 0,
+    "side": 1,
+    "back": 2
+   },
+   "side_faces": "right",
+   "anims": {
+    "idle": {
+     "cols": [
+      0
+     ],
+     "fps": 1
+    },
+    "walk": {
+     "cols": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "fps": 7
+    }
+   },
+   "notes": "Side row is drawn facing right; mirror it (repeat.x = -1/cols) for the other side.",
+   "frames": {
+    "front_0": "assets/sprites/monsters/goblin/front_0.png",
+    "front_1": "assets/sprites/monsters/goblin/front_1.png",
+    "front_2": "assets/sprites/monsters/goblin/front_2.png",
+    "front_3": "assets/sprites/monsters/goblin/front_3.png",
+    "side_0": "assets/sprites/monsters/goblin/side_0.png",
+    "side_1": "assets/sprites/monsters/goblin/side_1.png",
+    "side_2": "assets/sprites/monsters/goblin/side_2.png",
+    "side_3": "assets/sprites/monsters/goblin/side_3.png",
+    "back_0": "assets/sprites/monsters/goblin/back_0.png",
+    "back_1": "assets/sprites/monsters/goblin/back_1.png",
+    "back_2": "assets/sprites/monsters/goblin/back_2.png",
+    "back_3": "assets/sprites/monsters/goblin/back_3.png"
+   }
+  },
+  {
+   "id": "dragon",
+   "category": "monster",
+   "description": "Naga merah bersayap.",
+   "source": "all monster/dragon_bing/Lembar Sprite Naga Merah Pixel-Art.png",
+   "atlas": "assets/atlas/dragon.png",
+   "cell": [
+    238,
+    202
+   ],
+   "grid": [
+    4,
+    3
+   ],
+   "anchor": "bottom-center",
+   "world_height": 4.2,
+   "rows": {
+    "front": 0,
+    "side": 1,
+    "back": 2
+   },
+   "side_faces": "left",
+   "anims": {
+    "idle": {
+     "cols": [
+      0
+     ],
+     "fps": 1
+    },
+    "walk": {
+     "cols": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "fps": 7
+    }
+   },
+   "notes": "Side row is drawn facing left; mirror it (repeat.x = -1/cols) for the other side.",
+   "frames": {
+    "front_0": "assets/sprites/monsters/dragon/front_0.png",
+    "front_1": "assets/sprites/monsters/dragon/front_1.png",
+    "front_2": "assets/sprites/monsters/dragon/front_2.png",
+    "front_3": "assets/sprites/monsters/dragon/front_3.png",
+    "side_0": "assets/sprites/monsters/dragon/side_0.png",
+    "side_1": "assets/sprites/monsters/dragon/side_1.png",
+    "side_2": "assets/sprites/monsters/dragon/side_2.png",
+    "side_3": "assets/sprites/monsters/dragon/side_3.png",
+    "back_0": "assets/sprites/monsters/dragon/back_0.png",
+    "back_1": "assets/sprites/monsters/dragon/back_1.png",
+    "back_2": "assets/sprites/monsters/dragon/back_2.png",
+    "back_3": "assets/sprites/monsters/dragon/back_3.png"
+   }
+  },
+  {
+   "id": "slime_single",
+   "category": "monster_single",
+   "description": "Monster 1 pose: slime_single.",
+   "source": "all monster/Koleksi Sprite Monster RPG Fantasi.png",
+   "image": "assets/atlas/slime_single.png",
+   "image_full": "assets/sprites/monsters/single/slime_single.png",
+   "size": [
+    220,
+    201
+   ],
+   "anchor": "bottom-center",
+   "world_height": 1.3,
+   "faces": "front",
+   "notes": "Single pose: animate in-engine (bob / squash / flip)."
+  },
+  {
+   "id": "wolf_single",
+   "category": "monster_single",
+   "description": "Monster 1 pose: wolf_single.",
+   "source": "all monster/Koleksi Sprite Monster RPG Fantasi.png",
+   "image": "assets/atlas/wolf_single.png",
+   "image_full": "assets/sprites/monsters/single/wolf_single.png",
+   "size": [
+    179,
+    220
+   ],
+   "anchor": "bottom-center",
+   "world_height": 2.0,
+   "faces": "left",
+   "notes": "Single pose: animate in-engine (bob / squash / flip)."
+  },
+  {
+   "id": "dragon_young",
+   "category": "monster_single",
+   "description": "Monster 1 pose: dragon_young.",
+   "source": "all monster/Koleksi Sprite Monster RPG Fantasi.png",
+   "image": "assets/atlas/dragon_young.png",
+   "image_full": "assets/sprites/monsters/single/dragon_young.png",
+   "size": [
+    215,
+    220
+   ],
+   "anchor": "bottom-center",
+   "world_height": 3.2,
+   "faces": "left",
+   "notes": "Single pose: animate in-engine (bob / squash / flip)."
+  },
+  {
+   "id": "ghost",
+   "category": "monster_single",
+   "description": "Monster 1 pose: ghost.",
+   "source": "all monster/Koleksi Sprite Monster RPG Fantasi.png",
+   "image": "assets/atlas/ghost.png",
+   "image_full": "assets/sprites/monsters/single/ghost.png",
+   "size": [
+    135,
+    220
+   ],
+   "anchor": "bottom-center",
+   "world_height": 2.5,
+   "faces": "front",
+   "notes": "Single pose: animate in-engine (bob / squash / flip).",
+   "atlas": "assets/atlas/ghost.png",
+   "cell": [
+    198,
+    202
+   ],
+   "grid": [
+    4,
+    3
+   ],
+   "rows": {
+    "front": 0,
+    "side": 1,
+    "back": 2
+   },
+   "side_faces": "left",
+   "anims": {
+    "idle": {
+     "cols": [
+      0
+     ],
+     "fps": 1
+    },
+    "walk": {
+     "cols": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "fps": 7
+    }
+   }
+  },
+  {
+   "id": "goblin_single",
+   "category": "monster_single",
+   "description": "Monster 1 pose: goblin_single.",
+   "source": "all monster/Koleksi Sprite Monster RPG Fantasi.png",
+   "image": "assets/atlas/goblin_single.png",
+   "image_full": "assets/sprites/monsters/single/goblin_single.png",
+   "size": [
+    211,
+    220
+   ],
+   "anchor": "bottom-center",
+   "world_height": 2.0,
+   "faces": "front",
+   "notes": "Single pose: animate in-engine (bob / squash / flip)."
+  },
+  {
+   "id": "skeleton",
+   "category": "monster_single",
+   "description": "Monster 1 pose: skeleton.",
+   "source": "all monster/Koleksi Sprite Monster RPG Fantasi.png",
+   "image": "assets/atlas/skeleton.png",
+   "image_full": "assets/sprites/monsters/single/skeleton.png",
+   "size": [
+    148,
+    220
+   ],
+   "anchor": "bottom-center",
+   "world_height": 2.4,
+   "faces": "front",
+   "notes": "Single pose: animate in-engine (bob / squash / flip).",
+   "atlas": "assets/atlas/skeleton.png",
+   "cell": [
+    160,
+    202
+   ],
+   "grid": [
+    4,
+    3
+   ],
+   "rows": {
+    "front": 0,
+    "side": 1,
+    "back": 2
+   },
+   "side_faces": "right",
+   "anims": {
+    "idle": {
+     "cols": [
+      0
+     ],
+     "fps": 1
+    },
+    "walk": {
+     "cols": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "fps": 7
+    }
+   }
+  },
+  {
+   "id": "orc",
+   "category": "monster_single",
+   "description": "Monster 1 pose: orc.",
+   "source": "all monster/Koleksi Sprite Monster RPG Fantasi.png",
+   "image": "assets/atlas/orc.png",
+   "image_full": "assets/sprites/monsters/single/orc.png",
+   "size": [
+    171,
+    220
+   ],
+   "anchor": "bottom-center",
+   "world_height": 2.9,
+   "faces": "front",
+   "notes": "Single pose: animate in-engine (bob / squash / flip).",
+   "atlas": "assets/atlas/orc.png",
+   "cell": [
+    176,
+    202
+   ],
+   "grid": [
+    4,
+    3
+   ],
+   "rows": {
+    "front": 0,
+    "side": 1,
+    "back": 2
+   },
+   "side_faces": "left",
+   "anims": {
+    "idle": {
+     "cols": [
+      0
+     ],
+     "fps": 1
+    },
+    "walk": {
+     "cols": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "fps": 7
+    }
+   }
+  },
+  {
+   "id": "bat",
+   "category": "monster_single",
+   "description": "Monster 1 pose: bat.",
+   "source": "all monster/Koleksi Sprite Monster RPG Fantasi.png",
+   "image": "assets/atlas/bat.png",
+   "image_full": "assets/sprites/monsters/single/bat.png",
+   "size": [
+    220,
+    139
+   ],
+   "anchor": "bottom-center",
+   "world_height": 1.6,
+   "faces": "front",
+   "notes": "Single pose: animate in-engine (bob / squash / flip)."
+  },
+  {
+   "id": "mushroom",
+   "category": "monster_single",
+   "description": "Monster 1 pose: mushroom.",
+   "source": "all monster/Koleksi Sprite Monster RPG Fantasi.png",
+   "image": "assets/atlas/mushroom.png",
+   "image_full": "assets/sprites/monsters/single/mushroom.png",
+   "size": [
+    189,
+    201
+   ],
+   "anchor": "bottom-center",
+   "world_height": 1.5,
+   "faces": "front",
+   "notes": "Single pose: animate in-engine (bob / squash / flip)."
+  },
+  {
+   "id": "dragon_elder",
+   "category": "monster_single",
+   "description": "Monster 1 pose: dragon_elder.",
+   "source": "all monster/Koleksi Sprite Monster RPG Fantasi.png",
+   "image": "assets/atlas/dragon_elder.png",
+   "image_full": "assets/sprites/monsters/single/dragon_elder.png",
+   "size": [
+    199,
+    220
+   ],
+   "anchor": "bottom-center",
+   "world_height": 5.0,
+   "faces": "left",
+   "notes": "Single pose: animate in-engine (bob / squash / flip)."
+  },
+  {
+   "id": "house_large",
+   "category": "village",
+   "source": "tiles/Lembar Aset Desa Fantasi Isometrik.png",
+   "image": "assets/world/house_large.png",
+   "image_full": "assets/sprites/village/house_large.png",
+   "size": [
+    496,
+    451
+   ],
+   "anchor": "bottom-center",
+   "world_height": 9,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "shop_general",
+   "category": "village",
+   "source": "tiles/Lembar Aset Desa Fantasi Isometrik.png",
+   "image": "assets/world/shop_general.png",
+   "image_full": "assets/sprites/village/shop_general.png",
+   "size": [
+    396,
+    418
+   ],
+   "anchor": "bottom-center",
+   "world_height": 8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "bridge_wood",
+   "category": "village",
+   "source": "tiles/Lembar Aset Desa Fantasi Isometrik.png",
+   "image": "assets/world/bridge_wood.png",
+   "image_full": "assets/sprites/village/bridge_wood.png",
+   "size": [
+    380,
+    364
+   ],
+   "anchor": "bottom-center",
+   "world_height": 5,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "tree_oak_small",
+   "category": "village",
+   "source": "tiles/Lembar Aset Desa Fantasi Isometrik.png",
+   "image": "assets/world/tree_oak_small.png",
+   "image_full": "assets/sprites/village/tree_oak_small.png",
+   "size": [
+    265,
+    435
+   ],
+   "anchor": "bottom-center",
+   "world_height": 7,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "tile_cobblestone_iso",
+   "category": "village",
+   "source": "tiles/Lembar Aset Desa Fantasi Isometrik.png",
+   "image": "assets/world/tile_cobblestone_iso.png",
+   "image_full": "assets/sprites/village/tile_cobblestone_iso.png",
+   "size": [
+    391,
+    268
+   ],
+   "anchor": "bottom-center",
+   "world_height": 2.5,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "tile_grass_iso",
+   "category": "village",
+   "source": "tiles/Lembar Aset Desa Fantasi Isometrik.png",
+   "image": "assets/world/tile_grass_iso.png",
+   "image_full": "assets/sprites/village/tile_grass_iso.png",
+   "size": [
+    348,
+    255
+   ],
+   "anchor": "bottom-center",
+   "world_height": 2.5,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "tile_dirt_iso",
+   "category": "village",
+   "source": "tiles/Lembar Aset Desa Fantasi Isometrik.png",
+   "image": "assets/world/tile_dirt_iso.png",
+   "image_full": "assets/sprites/village/tile_dirt_iso.png",
+   "size": [
+    347,
+    272
+   ],
+   "anchor": "bottom-center",
+   "world_height": 2.5,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "fence_wood_rail",
+   "category": "village",
+   "source": "tiles/Lembar Aset Desa Fantasi Isometrik.png",
+   "image": "assets/world/fence_wood_rail.png",
+   "image_full": "assets/sprites/village/fence_wood_rail.png",
+   "size": [
+    253,
+    183
+   ],
+   "anchor": "bottom-center",
+   "world_height": 1.6,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "signpost_lantern",
+   "category": "village",
+   "source": "tiles/Lembar Aset Desa Fantasi Isometrik.png",
+   "image": "assets/world/signpost_lantern.png",
+   "image_full": "assets/sprites/village/signpost_lantern.png",
+   "size": [
+    136,
+    250
+   ],
+   "anchor": "bottom-center",
+   "world_height": 3.2,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "market_stall",
+   "category": "village",
+   "source": "tiles/Lembar Aset Desa Fantasi Isometrik.png",
+   "image": "assets/world/market_stall.png",
+   "image_full": "assets/sprites/village/market_stall.png",
+   "size": [
+    229,
+    258
+   ],
+   "anchor": "bottom-center",
+   "world_height": 3.4,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "well",
+   "category": "village",
+   "source": "tiles/Lembar Aset Desa Fantasi Isometrik.png",
+   "image": "assets/world/well.png",
+   "image_full": "assets/sprites/village/well.png",
+   "size": [
+    189,
+    260
+   ],
+   "anchor": "bottom-center",
+   "world_height": 3.4,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "street_lamp",
+   "category": "village",
+   "source": "tiles/Lembar Aset Desa Fantasi Isometrik.png",
+   "image": "assets/world/street_lamp.png",
+   "image_full": "assets/sprites/village/street_lamp.png",
+   "size": [
+    83,
+    285
+   ],
+   "anchor": "bottom-center",
+   "world_height": 4.2,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "banner_blue",
+   "category": "village",
+   "source": "tiles/Lembar Aset Desa Fantasi Isometrik.png",
+   "image": "assets/world/banner_blue.png",
+   "image_full": "assets/sprites/village/banner_blue.png",
+   "size": [
+    93,
+    233
+   ],
+   "anchor": "bottom-center",
+   "world_height": 3.6,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "stone_pillar",
+   "category": "village",
+   "source": "tiles/Lembar Aset Desa Fantasi Isometrik.png",
+   "image": "assets/world/stone_pillar.png",
+   "image_full": "assets/sprites/village/stone_pillar.png",
+   "size": [
+    125,
+    165
+   ],
+   "anchor": "bottom-center",
+   "world_height": 2.6,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "crates_barrels",
+   "category": "village",
+   "source": "tiles/Lembar Aset Desa Fantasi Isometrik.png",
+   "image": "assets/world/crates_barrels.png",
+   "image_full": "assets/sprites/village/crates_barrels.png",
+   "size": [
+    184,
+    189
+   ],
+   "anchor": "bottom-center",
+   "world_height": 2.2,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "flower_arch",
+   "category": "village",
+   "source": "tiles/Lembar Aset Desa Fantasi Isometrik.png",
+   "image": "assets/world/flower_arch.png",
+   "image_full": "assets/sprites/village/flower_arch.png",
+   "size": [
+    196,
+    235
+   ],
+   "anchor": "bottom-center",
+   "world_height": 4.0,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "picket_fence",
+   "category": "village",
+   "source": "tiles/Lembar Aset Desa Fantasi Isometrik.png",
+   "image": "assets/world/picket_fence.png",
+   "image_full": "assets/sprites/village/picket_fence.png",
+   "size": [
+    181,
+    180
+   ],
+   "anchor": "bottom-center",
+   "world_height": 1.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "flower_planter",
+   "category": "village",
+   "source": "tiles/Lembar Aset Desa Fantasi Isometrik.png",
+   "image": "assets/world/flower_planter.png",
+   "image_full": "assets/sprites/village/flower_planter.png",
+   "size": [
+    139,
+    146
+   ],
+   "anchor": "bottom-center",
+   "world_height": 1.3,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "cottage",
+   "category": "buildings",
+   "source": "tiles/Koleksi Bangunan Fantasi Isometrik.png",
+   "image": "assets/world/cottage.png",
+   "image_full": "assets/sprites/buildings/cottage.png",
+   "size": [
+    403,
+    421
+   ],
+   "anchor": "bottom-center",
+   "world_height": 8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "tavern",
+   "category": "buildings",
+   "source": "tiles/Koleksi Bangunan Fantasi Isometrik.png",
+   "image": "assets/world/tavern.png",
+   "image_full": "assets/sprites/buildings/tavern.png",
+   "size": [
+    512,
+    389
+   ],
+   "anchor": "bottom-center",
+   "world_height": 11,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "blacksmith",
+   "category": "buildings",
+   "source": "tiles/Koleksi Bangunan Fantasi Isometrik.png",
+   "image": "assets/world/blacksmith.png",
+   "image_full": "assets/sprites/buildings/blacksmith.png",
+   "size": [
+    436,
+    450
+   ],
+   "anchor": "bottom-center",
+   "world_height": 9.5,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "magic_shop",
+   "category": "buildings",
+   "source": "tiles/Koleksi Bangunan Fantasi Isometrik.png",
+   "image": "assets/world/magic_shop.png",
+   "image_full": "assets/sprites/buildings/magic_shop.png",
+   "size": [
+    435,
+    476
+   ],
+   "anchor": "bottom-center",
+   "world_height": 9.5,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "warehouse",
+   "category": "buildings",
+   "source": "tiles/Koleksi Bangunan Fantasi Isometrik.png",
+   "image": "assets/world/warehouse.png",
+   "image_full": "assets/sprites/buildings/warehouse.png",
+   "size": [
+    492,
+    419
+   ],
+   "anchor": "bottom-center",
+   "world_height": 8.5,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "castle_gate",
+   "category": "buildings",
+   "source": "tiles/Koleksi Bangunan Fantasi Isometrik.png",
+   "image": "assets/world/castle_gate.png",
+   "image_full": "assets/sprites/buildings/castle_gate.png",
+   "size": [
+    512,
+    507
+   ],
+   "anchor": "bottom-center",
+   "world_height": 12,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "tree_oak_big",
+   "category": "nature",
+   "source": "tiles/Lembar Sprite Alam RPG Isometrik.png",
+   "image": "assets/world/tree_oak_big.png",
+   "image_full": "assets/sprites/nature/tree_oak_big.png",
+   "size": [
+    442,
+    512
+   ],
+   "anchor": "bottom-center",
+   "world_height": 8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "tree_pine",
+   "category": "nature",
+   "source": "tiles/Lembar Sprite Alam RPG Isometrik.png",
+   "image": "assets/world/tree_pine.png",
+   "image_full": "assets/sprites/nature/tree_pine.png",
+   "size": [
+    299,
+    512
+   ],
+   "anchor": "bottom-center",
+   "world_height": 8.5,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "bush_round",
+   "category": "nature",
+   "source": "tiles/Lembar Sprite Alam RPG Isometrik.png",
+   "image": "assets/world/bush_round.png",
+   "image_full": "assets/sprites/nature/bush_round.png",
+   "size": [
+    275,
+    268
+   ],
+   "anchor": "bottom-center",
+   "world_height": 2.4,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "rock_medium",
+   "category": "nature",
+   "source": "tiles/Lembar Sprite Alam RPG Isometrik.png",
+   "image": "assets/world/rock_medium.png",
+   "image_full": "assets/sprites/nature/rock_medium.png",
+   "size": [
+    140,
+    115
+   ],
+   "anchor": "bottom-center",
+   "world_height": 1.3,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "rock_cluster",
+   "category": "nature",
+   "source": "tiles/Lembar Sprite Alam RPG Isometrik.png",
+   "image": "assets/world/rock_cluster.png",
+   "image_full": "assets/sprites/nature/rock_cluster.png",
+   "size": [
+    299,
+    228
+   ],
+   "anchor": "bottom-center",
+   "world_height": 2.6,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "pebble_a",
+   "category": "nature",
+   "source": "tiles/Lembar Sprite Alam RPG Isometrik.png",
+   "image": "assets/world/pebble_a.png",
+   "image_full": "assets/sprites/nature/pebble_a.png",
+   "size": [
+    83,
+    53
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "pebble_b",
+   "category": "nature",
+   "source": "tiles/Lembar Sprite Alam RPG Isometrik.png",
+   "image": "assets/world/pebble_b.png",
+   "image_full": "assets/sprites/nature/pebble_b.png",
+   "size": [
+    108,
+    74
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "pebble_c",
+   "category": "nature",
+   "source": "tiles/Lembar Sprite Alam RPG Isometrik.png",
+   "image": "assets/world/pebble_c.png",
+   "image_full": "assets/sprites/nature/pebble_c.png",
+   "size": [
+    68,
+    45
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "fence_wood_long",
+   "category": "nature",
+   "source": "tiles/Lembar Sprite Alam RPG Isometrik.png",
+   "image": "assets/world/fence_wood_long.png",
+   "image_full": "assets/sprites/nature/fence_wood_long.png",
+   "size": [
+    428,
+    211
+   ],
+   "anchor": "bottom-center",
+   "world_height": 1.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "flower_bush",
+   "category": "nature",
+   "source": "tiles/Lembar Sprite Alam RPG Isometrik.png",
+   "image": "assets/world/flower_bush.png",
+   "image_full": "assets/sprites/nature/flower_bush.png",
+   "size": [
+    302,
+    194
+   ],
+   "anchor": "bottom-center",
+   "world_height": 1.6,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "log_hollow",
+   "category": "nature",
+   "source": "tiles/Lembar Sprite Alam RPG Isometrik.png",
+   "image": "assets/world/log_hollow.png",
+   "image_full": "assets/sprites/nature/log_hollow.png",
+   "size": [
+    408,
+    259
+   ],
+   "anchor": "bottom-center",
+   "world_height": 1.4,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "rock_mossy",
+   "category": "nature",
+   "source": "tiles/Lembar Sprite Alam RPG Isometrik.png",
+   "image": "assets/world/rock_mossy.png",
+   "image_full": "assets/sprites/nature/rock_mossy.png",
+   "size": [
+    191,
+    131
+   ],
+   "anchor": "bottom-center",
+   "world_height": 1.4,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "grass_tuft_a",
+   "category": "nature",
+   "source": "tiles/Lembar Sprite Alam RPG Isometrik.png",
+   "image": "assets/world/grass_tuft_a.png",
+   "image_full": "assets/sprites/nature/grass_tuft_a.png",
+   "size": [
+    102,
+    83
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "grass_tuft_b",
+   "category": "nature",
+   "source": "tiles/Lembar Sprite Alam RPG Isometrik.png",
+   "image": "assets/world/grass_tuft_b.png",
+   "image_full": "assets/sprites/nature/grass_tuft_b.png",
+   "size": [
+    79,
+    41
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "flowers_pink",
+   "category": "nature",
+   "source": "tiles/Lembar Sprite Alam RPG Isometrik.png",
+   "image": "assets/world/flowers_pink.png",
+   "image_full": "assets/sprites/nature/flowers_pink.png",
+   "size": [
+    154,
+    123
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.9,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "flowers_white",
+   "category": "nature",
+   "source": "tiles/Lembar Sprite Alam RPG Isometrik.png",
+   "image": "assets/world/flowers_white.png",
+   "image_full": "assets/sprites/nature/flowers_white.png",
+   "size": [
+    142,
+    142
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.9,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "flowers_purple",
+   "category": "nature",
+   "source": "tiles/Lembar Sprite Alam RPG Isometrik.png",
+   "image": "assets/world/flowers_purple.png",
+   "image_full": "assets/sprites/nature/flowers_purple.png",
+   "size": [
+    134,
+    127
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.9,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "flowers_orange",
+   "category": "nature",
+   "source": "tiles/Lembar Sprite Alam RPG Isometrik.png",
+   "image": "assets/world/flowers_orange.png",
+   "image_full": "assets/sprites/nature/flowers_orange.png",
+   "size": [
+    137,
+    112
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.9,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "grass_a",
+   "category": "nature",
+   "source": "tiles/Lembar Sprite Alam RPG Isometrik.png",
+   "image": "assets/world/grass_a.png",
+   "image_full": "assets/sprites/nature/grass_a.png",
+   "size": [
+    93,
+    94
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "grass_b",
+   "category": "nature",
+   "source": "tiles/Lembar Sprite Alam RPG Isometrik.png",
+   "image": "assets/world/grass_b.png",
+   "image_full": "assets/sprites/nature/grass_b.png",
+   "size": [
+    96,
+    91
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "clover",
+   "category": "nature",
+   "source": "tiles/Lembar Sprite Alam RPG Isometrik.png",
+   "image": "assets/world/clover.png",
+   "image_full": "assets/sprites/nature/clover.png",
+   "size": [
+    164,
+    108
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "grass_c",
+   "category": "nature",
+   "source": "tiles/Lembar Sprite Alam RPG Isometrik.png",
+   "image": "assets/world/grass_c.png",
+   "image_full": "assets/sprites/nature/grass_c.png",
+   "size": [
+    90,
+    79
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "pebbles",
+   "category": "nature",
+   "source": "tiles/Lembar Sprite Alam RPG Isometrik.png",
+   "image": "assets/world/pebbles.png",
+   "image_full": "assets/sprites/nature/pebbles.png",
+   "size": [
+    66,
+    89
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "leafy_plant",
+   "category": "nature",
+   "source": "tiles/Lembar Sprite Alam RPG Isometrik.png",
+   "image": "assets/world/leafy_plant.png",
+   "image_full": "assets/sprites/nature/leafy_plant.png",
+   "size": [
+    133,
+    82
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "gate_tower_l",
+   "category": "buildings",
+   "source": "tiles/Koleksi Bangunan Fantasi Isometrik.png",
+   "image": "assets/world/gate_tower_l.png",
+   "image_full": "assets/sprites/buildings/gate_tower_l.png",
+   "size": [
+    207,
+    510
+   ],
+   "anchor": "bottom-center",
+   "world_height": 9.5,
+   "billboard": "cylindrical",
+   "notes": "One tower of castle_gate; place one on each side of a road."
+  },
+  {
+   "id": "gate_tower_r",
+   "category": "buildings",
+   "source": "tiles/Koleksi Bangunan Fantasi Isometrik.png",
+   "image": "assets/world/gate_tower_r.png",
+   "image_full": "assets/sprites/buildings/gate_tower_r.png",
+   "size": [
+    195,
+    512
+   ],
+   "anchor": "bottom-center",
+   "world_height": 9.5,
+   "billboard": "cylindrical",
+   "notes": "One tower of castle_gate; place one on each side of a road."
+  },
+  {
+   "id": "tex_grass",
+   "category": "texture",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/textures/grass.png",
+   "size": [
+    256,
+    256
+   ],
+   "wrap": "repeat",
+   "notes": "Seamless (mirror-tiled). Use as RepeatWrapping ground texture."
+  },
+  {
+   "id": "tex_detail_grass",
+   "category": "texture",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/textures/detail_grass.png",
+   "size": [
+    256,
+    256
+   ],
+   "wrap": "repeat",
+   "notes": "Grey detail map (mean 0.8). Multiply with vertex colours; scale colours by 1/0.8."
+  },
+  {
+   "id": "tex_grass_flowers",
+   "category": "texture",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/textures/grass_flowers.png",
+   "size": [
+    256,
+    256
+   ],
+   "wrap": "repeat",
+   "notes": "Seamless (mirror-tiled). Use as RepeatWrapping ground texture."
+  },
+  {
+   "id": "tex_dirt",
+   "category": "texture",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/textures/dirt.png",
+   "size": [
+    256,
+    256
+   ],
+   "wrap": "repeat",
+   "notes": "Seamless (mirror-tiled). Use as RepeatWrapping ground texture."
+  },
+  {
+   "id": "tex_cobble",
+   "category": "texture",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/textures/cobble.png",
+   "size": [
+    256,
+    256
+   ],
+   "wrap": "repeat",
+   "notes": "Seamless (mirror-tiled). Use as RepeatWrapping ground texture."
+  },
+  {
+   "id": "tex_cobble_mossy",
+   "category": "texture",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/textures/cobble_mossy.png",
+   "size": [
+    256,
+    256
+   ],
+   "wrap": "repeat",
+   "notes": "Seamless (mirror-tiled). Use as RepeatWrapping ground texture."
+  },
+  {
+   "id": "tex_water",
+   "category": "texture",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/textures/water.png",
+   "size": [
+    256,
+    256
+   ],
+   "wrap": "repeat",
+   "notes": "Seamless (mirror-tiled). Use as RepeatWrapping ground texture."
+  },
+  {
+   "id": "ground_grass",
+   "category": "tileset_ground",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/ground_grass.png",
+   "size": [
+    187,
+    186
+   ],
+   "anchor": "bottom-center",
+   "notes": "Top-down square ground tile (opaque). For a repeating ground use assets/textures/*."
+  },
+  {
+   "id": "ground_grass_flowers",
+   "category": "tileset_ground",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/ground_grass_flowers.png",
+   "size": [
+    177,
+    184
+   ],
+   "anchor": "bottom-center",
+   "notes": "Top-down square ground tile (opaque). For a repeating ground use assets/textures/*."
+  },
+  {
+   "id": "ground_dirt_a",
+   "category": "tileset_ground",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/ground_dirt_a.png",
+   "size": [
+    178,
+    185
+   ],
+   "anchor": "bottom-center",
+   "notes": "Top-down square ground tile (opaque). For a repeating ground use assets/textures/*."
+  },
+  {
+   "id": "ground_dirt_b",
+   "category": "tileset_ground",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/ground_dirt_b.png",
+   "size": [
+    178,
+    185
+   ],
+   "anchor": "bottom-center",
+   "notes": "Top-down square ground tile (opaque). For a repeating ground use assets/textures/*."
+  },
+  {
+   "id": "ground_cobble_a",
+   "category": "tileset_ground",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/ground_cobble_a.png",
+   "size": [
+    175,
+    185
+   ],
+   "anchor": "bottom-center",
+   "notes": "Top-down square ground tile (opaque). For a repeating ground use assets/textures/*."
+  },
+  {
+   "id": "ground_cobble_b",
+   "category": "tileset_ground",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/ground_cobble_b.png",
+   "size": [
+    180,
+    185
+   ],
+   "anchor": "bottom-center",
+   "notes": "Top-down square ground tile (opaque). For a repeating ground use assets/textures/*."
+  },
+  {
+   "id": "ground_water_a",
+   "category": "tileset_ground",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/ground_water_a.png",
+   "size": [
+    180,
+    182
+   ],
+   "anchor": "bottom-center",
+   "notes": "Top-down square ground tile (opaque). For a repeating ground use assets/textures/*."
+  },
+  {
+   "id": "ground_water_b",
+   "category": "tileset_ground",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/ground_water_b.png",
+   "size": [
+    180,
+    183
+   ],
+   "anchor": "bottom-center",
+   "notes": "Top-down square ground tile (opaque). For a repeating ground use assets/textures/*."
+  },
+  {
+   "id": "ground_grass_bushes",
+   "category": "tileset_ground",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/ground_grass_bushes.png",
+   "size": [
+    186,
+    183
+   ],
+   "anchor": "bottom-center",
+   "notes": "Top-down square ground tile (opaque). For a repeating ground use assets/textures/*."
+  },
+  {
+   "id": "ground_grass_rock",
+   "category": "tileset_ground",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/ground_grass_rock.png",
+   "size": [
+    177,
+    183
+   ],
+   "anchor": "bottom-center",
+   "notes": "Top-down square ground tile (opaque). For a repeating ground use assets/textures/*."
+  },
+  {
+   "id": "ground_dirt_c",
+   "category": "tileset_ground",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/ground_dirt_c.png",
+   "size": [
+    177,
+    183
+   ],
+   "anchor": "bottom-center",
+   "notes": "Top-down square ground tile (opaque). For a repeating ground use assets/textures/*."
+  },
+  {
+   "id": "ground_dirt_d",
+   "category": "tileset_ground",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/ground_dirt_d.png",
+   "size": [
+    177,
+    183
+   ],
+   "anchor": "bottom-center",
+   "notes": "Top-down square ground tile (opaque). For a repeating ground use assets/textures/*."
+  },
+  {
+   "id": "ground_cobble_c",
+   "category": "tileset_ground",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/ground_cobble_c.png",
+   "size": [
+    175,
+    183
+   ],
+   "anchor": "bottom-center",
+   "notes": "Top-down square ground tile (opaque). For a repeating ground use assets/textures/*."
+  },
+  {
+   "id": "ground_cobble_d",
+   "category": "tileset_ground",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/ground_cobble_d.png",
+   "size": [
+    179,
+    182
+   ],
+   "anchor": "bottom-center",
+   "notes": "Top-down square ground tile (opaque). For a repeating ground use assets/textures/*."
+  },
+  {
+   "id": "ground_water_shore_a",
+   "category": "tileset_ground",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/ground_water_shore_a.png",
+   "size": [
+    180,
+    182
+   ],
+   "anchor": "bottom-center",
+   "notes": "Top-down square ground tile (opaque). For a repeating ground use assets/textures/*."
+  },
+  {
+   "id": "ground_water_shore_b",
+   "category": "tileset_ground",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/ground_water_shore_b.png",
+   "size": [
+    181,
+    183
+   ],
+   "anchor": "bottom-center",
+   "notes": "Top-down square ground tile (opaque). For a repeating ground use assets/textures/*."
+  },
+  {
+   "id": "ground_water_deep",
+   "category": "tileset_ground",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/ground_water_deep.png",
+   "size": [
+    169,
+    262
+   ],
+   "anchor": "bottom-center",
+   "notes": "Top-down square ground tile (opaque). For a repeating ground use assets/textures/*."
+  },
+  {
+   "id": "waterfall",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/waterfall.png",
+   "size": [
+    182,
+    262
+   ],
+   "anchor": "bottom-center",
+   "world_height": 3.5,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "bridge_plank_long",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/bridge_plank_long.png",
+   "size": [
+    291,
+    189
+   ],
+   "anchor": "bottom-center",
+   "world_height": 1.2,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "bridge_plank_mid",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/bridge_plank_mid.png",
+   "size": [
+    212,
+    189
+   ],
+   "anchor": "bottom-center",
+   "world_height": 1.2,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "bridge_plank_short",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/bridge_plank_short.png",
+   "size": [
+    181,
+    189
+   ],
+   "anchor": "bottom-center",
+   "world_height": 1.2,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "cliff_grass",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/cliff_grass.png",
+   "size": [
+    185,
+    187
+   ],
+   "anchor": "bottom-center",
+   "world_height": 2.0,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "cliff_dirt",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/cliff_dirt.png",
+   "size": [
+    187,
+    186
+   ],
+   "anchor": "bottom-center",
+   "world_height": 2.0,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "cliff_small",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/cliff_small.png",
+   "size": [
+    98,
+    127
+   ],
+   "anchor": "bottom-center",
+   "world_height": 1.6,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "rock_big",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/rock_big.png",
+   "size": [
+    114,
+    85
+   ],
+   "anchor": "bottom-center",
+   "world_height": 1.1,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "rock_mossy_a",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/rock_mossy_a.png",
+   "size": [
+    79,
+    65
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "rock_mossy_b",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/rock_mossy_b.png",
+   "size": [
+    82,
+    69
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "bush_a",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/bush_a.png",
+   "size": [
+    101,
+    93
+   ],
+   "anchor": "bottom-center",
+   "world_height": 1.1,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "bush_b",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/bush_b.png",
+   "size": [
+    82,
+    95
+   ],
+   "anchor": "bottom-center",
+   "world_height": 1.1,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "flowers_orange_small",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/flowers_orange_small.png",
+   "size": [
+    84,
+    81
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "tree_round",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/tree_round.png",
+   "size": [
+    162,
+    244
+   ],
+   "anchor": "bottom-center",
+   "world_height": 5.5,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "tree_pine_small",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/tree_pine_small.png",
+   "size": [
+    149,
+    244
+   ],
+   "anchor": "bottom-center",
+   "world_height": 6.0,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "rock_stack",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/rock_stack.png",
+   "size": [
+    138,
+    100
+   ],
+   "anchor": "bottom-center",
+   "world_height": 1.2,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "flowers_white_small",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/flowers_white_small.png",
+   "size": [
+    90,
+    96
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "flowers_yellow_a",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/flowers_yellow_a.png",
+   "size": [
+    83,
+    90
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "flowers_yellow_b",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/flowers_yellow_b.png",
+   "size": [
+    85,
+    88
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "flowers_purple_small",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/flowers_purple_small.png",
+   "size": [
+    98,
+    103
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "flowers_yellow_c",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/flowers_yellow_c.png",
+   "size": [
+    84,
+    95
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "tree_stump",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/tree_stump.png",
+   "size": [
+    98,
+    95
+   ],
+   "anchor": "bottom-center",
+   "world_height": 1.0,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "fence_short",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/fence_short.png",
+   "size": [
+    151,
+    88
+   ],
+   "anchor": "bottom-center",
+   "world_height": 1.2,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "lamp_post",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/lamp_post.png",
+   "size": [
+    63,
+    181
+   ],
+   "anchor": "bottom-center",
+   "world_height": 3.2,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "banner_red",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/banner_red.png",
+   "size": [
+    85,
+    187
+   ],
+   "anchor": "bottom-center",
+   "world_height": 3.2,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "boulder",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/boulder.png",
+   "size": [
+    84,
+    76
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.9,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "stones_small",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/stones_small.png",
+   "size": [
+    51,
+    65
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.6,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "stone_c",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/stone_c.png",
+   "size": [
+    49,
+    46
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.5,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "stone_d",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/stone_d.png",
+   "size": [
+    41,
+    34
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.4,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "mushroom_red",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/mushroom_red.png",
+   "size": [
+    42,
+    56
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.6,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "mushroom_brown",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/mushroom_brown.png",
+   "size": [
+    58,
+    67
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.7,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "flower_tiny_a",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/flower_tiny_a.png",
+   "size": [
+    47,
+    50
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.5,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "flower_tiny_b",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/flower_tiny_b.png",
+   "size": [
+    40,
+    51
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.5,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "flower_tiny_c",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/flower_tiny_c.png",
+   "size": [
+    43,
+    52
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.5,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "fern_a",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/fern_a.png",
+   "size": [
+    82,
+    81
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "fern_b",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/fern_b.png",
+   "size": [
+    73,
+    77
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "fern_c",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/fern_c.png",
+   "size": [
+    70,
+    79
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "fern_d",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/fern_d.png",
+   "size": [
+    67,
+    78
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "signpost",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/signpost.png",
+   "size": [
+    75,
+    91
+   ],
+   "anchor": "bottom-center",
+   "world_height": 1.4,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "reeds",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/reeds.png",
+   "size": [
+    91,
+    69
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.8,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "grass_small",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/grass_small.png",
+   "size": [
+    102,
+    44
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.5,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "shrub_small",
+   "category": "tileset_prop",
+   "source": "Tileset RPG Fantasi Pixel Art.png",
+   "image": "assets/sprites/tileset/shrub_small.png",
+   "size": [
+    69,
+    62
+   ],
+   "anchor": "bottom-center",
+   "world_height": 0.7,
+   "billboard": "cylindrical"
+  },
+  {
+   "id": "icon_sword1",
+   "category": "weapon_icon",
+   "source": "Lembar Ikon Senjata RPG Fantasi.png",
+   "weapon_type": "sword1",
+   "image": "assets/icons/icon_sword1.png",
+   "image_full": "assets/sprites/weapons/icon_sword1.png",
+   "size": [
+    127,
+    128
+   ],
+   "notes": "UI icon (inventory / shop / job picker)."
+  },
+  {
+   "id": "icon_sword2",
+   "category": "weapon_icon",
+   "source": "Lembar Ikon Senjata RPG Fantasi.png",
+   "weapon_type": "sword2",
+   "image": "assets/icons/icon_sword2.png",
+   "image_full": "assets/sprites/weapons/icon_sword2.png",
+   "size": [
+    128,
+    94
+   ],
+   "notes": "UI icon (inventory / shop / job picker)."
+  },
+  {
+   "id": "icon_mace",
+   "category": "weapon_icon",
+   "source": "Lembar Ikon Senjata RPG Fantasi.png",
+   "weapon_type": "mace",
+   "image": "assets/icons/icon_mace.png",
+   "image_full": "assets/sprites/weapons/icon_mace.png",
+   "size": [
+    118,
+    128
+   ],
+   "notes": "UI icon (inventory / shop / job picker)."
+  },
+  {
+   "id": "icon_shield",
+   "category": "weapon_icon",
+   "source": "Lembar Ikon Senjata RPG Fantasi.png",
+   "weapon_type": "mace",
+   "image": "assets/icons/icon_shield.png",
+   "image_full": "assets/sprites/weapons/icon_shield.png",
+   "size": [
+    128,
+    115
+   ],
+   "notes": "UI icon (inventory / shop / job picker)."
+  },
+  {
+   "id": "icon_bow",
+   "category": "weapon_icon",
+   "source": "Lembar Ikon Senjata RPG Fantasi.png",
+   "weapon_type": "bow",
+   "image": "assets/icons/icon_bow.png",
+   "image_full": "assets/sprites/weapons/icon_bow.png",
+   "size": [
+    128,
+    109
+   ],
+   "notes": "UI icon (inventory / shop / job picker)."
+  },
+  {
+   "id": "icon_staff",
+   "category": "weapon_icon",
+   "source": "Lembar Ikon Senjata RPG Fantasi.png",
+   "weapon_type": "staff",
+   "image": "assets/icons/icon_staff.png",
+   "image_full": "assets/sprites/weapons/icon_staff.png",
+   "size": [
+    128,
+    72
+   ],
+   "notes": "UI icon (inventory / shop / job picker)."
+  },
+  {
+   "id": "weapon_sword1",
+   "category": "weapon",
+   "source": "weapons/Pedang Pixel Perak dengan Permata Emas.png",
+   "weapon_type": "sword1",
+   "orientation": "diagonal, tip up-right",
+   "image": "assets/weapons/weapon_sword1.png",
+   "image_full": "assets/sprites/weapons/weapon_sword1.png",
+   "size": [
+    256,
+    240
+   ],
+   "notes": "Held-weapon / swing-effect sprite (rotate in-engine).",
+   "cell": [
+    178,
+    260
+   ],
+   "grid": [
+    4,
+    1
+   ],
+   "directions": [
+    "front",
+    "left",
+    "right",
+    "back"
+   ]
+  },
+  {
+   "id": "weapon_sword2",
+   "category": "weapon",
+   "source": "weapons/Pedang Besar Gotik Berpermata Rubi.png",
+   "weapon_type": "sword2",
+   "orientation": "diagonal, tip up-right",
+   "image": "assets/weapons/weapon_sword2.png",
+   "image_full": "assets/sprites/weapons/weapon_sword2.png",
+   "size": [
+    256,
+    166
+   ],
+   "notes": "Held-weapon / swing-effect sprite (rotate in-engine).",
+   "cell": [
+    165,
+    260
+   ],
+   "grid": [
+    4,
+    1
+   ],
+   "directions": [
+    "front",
+    "left",
+    "right",
+    "back"
+   ]
+  },
+  {
+   "id": "weapon_mace",
+   "category": "weapon",
+   "source": "weapons/Gada Berduri Baja Fantasi.png",
+   "weapon_type": "mace",
+   "orientation": "diagonal, head up-right",
+   "image": "assets/weapons/weapon_mace.png",
+   "image_full": "assets/sprites/weapons/weapon_mace.png",
+   "size": [
+    256,
+    174
+   ],
+   "notes": "Held-weapon / swing-effect sprite (rotate in-engine).",
+   "cell": [
+    178,
+    260
+   ],
+   "grid": [
+    4,
+    1
+   ],
+   "directions": [
+    "front",
+    "left",
+    "right",
+    "back"
+   ]
+  },
+  {
+   "id": "weapon_bow",
+   "category": "weapon",
+   "source": "weapons/Busur Fantasi dengan Anak Panah Nocked.png",
+   "weapon_type": "bow",
+   "orientation": "vertical bow, arrow points left",
+   "image": "assets/weapons/weapon_bow.png",
+   "image_full": "assets/sprites/weapons/weapon_bow.png",
+   "size": [
+    196,
+    256
+   ],
+   "notes": "Held-weapon / swing-effect sprite (rotate in-engine).",
+   "cell": [
+    220,
+    260
+   ],
+   "grid": [
+    4,
+    1
+   ],
+   "directions": [
+    "front",
+    "left",
+    "right",
+    "back"
+   ]
+  },
+  {
+   "id": "weapon_staff",
+   "category": "weapon",
+   "source": "weapons/Tongkat Kristal Biru Ajaib.png",
+   "weapon_type": "staff",
+   "orientation": "vertical, crystal on top",
+   "image": "assets/weapons/weapon_staff.png",
+   "image_full": "assets/sprites/weapons/weapon_staff.png",
+   "size": [
+    84,
+    256
+   ],
+   "notes": "Held-weapon / swing-effect sprite (rotate in-engine).",
+   "cell": [
+    88,
+    260
+   ],
+   "grid": [
+    4,
+    1
+   ],
+   "directions": [
+    "front",
+    "left",
+    "right",
+    "back"
+   ]
+  },
+  {
+   "id": "fx_slash",
+   "category": "effect",
+   "atlas": "assets/atlas/fx_slash.png",
+   "cell": [
+    96,
+    96
+   ],
+   "grid": [
+    4,
+    1
+   ],
+   "anchor": "center",
+   "world_height": 2.4,
+   "notes": "Slash arc sweeping clockwise from upper-left to lower-right (a right-facing swing). Mirror for left."
+  },
+  {
+   "id": "fx_hit",
+   "category": "effect",
+   "atlas": "assets/atlas/fx_hit.png",
+   "cell": [
+    64,
+    64
+   ],
+   "grid": [
+    4,
+    1
+   ],
+   "anchor": "center",
+   "world_height": 1.4,
+   "notes": "Impact spark, 4 frames (play at ~20 fps)."
+  },
+  {
+   "id": "fx_arrow",
+   "category": "effect",
+   "image": "assets/atlas/fx_arrow.png",
+   "size": [
+    117,
+    27
+   ],
+   "anchor": "center",
+   "world_height": 0.35,
+   "notes": "Flying arrow, tip points right (rotate in-engine)."
+  },
+  {
+   "id": "npc_guard",
+   "category": "npc",
+   "atlas": "assets/atlas/npc_guard.png",
+   "cell": [
+    84,
+    152
+   ],
+   "grid": [
+    4,
+    4
+   ],
+   "anchor": "bottom-center",
+   "world_height": 2.3,
+   "rows": {
+    "front": 0,
+    "left": 1,
+    "right": 2,
+    "back": 3
+   },
+   "anims": {
+    "idle": {
+     "cols": [
+      0
+     ],
+     "fps": 1
+    },
+    "walk": {
+     "cols": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "fps": 8
+    }
+   }
+  },
+  {
+   "id": "npc_guide",
+   "category": "npc",
+   "atlas": "assets/atlas/npc_guide.png",
+   "cell": [
+    86,
+    152
+   ],
+   "grid": [
+    4,
+    4
+   ],
+   "anchor": "bottom-center",
+   "world_height": 2.3,
+   "rows": {
+    "front": 0,
+    "left": 1,
+    "right": 2,
+    "back": 3
+   },
+   "anims": {
+    "idle": {
+     "cols": [
+      0
+     ],
+     "fps": 1
+    },
+    "walk": {
+     "cols": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "fps": 8
+    }
+   }
+  },
+  {
+   "id": "npc_fighter",
+   "category": "npc",
+   "atlas": "assets/atlas/npc_fighter.png",
+   "cell": [
+    116,
+    152
+   ],
+   "grid": [
+    4,
+    4
+   ],
+   "anchor": "bottom-center",
+   "world_height": 2.4,
+   "rows": {
+    "front": 0,
+    "left": 1,
+    "right": 2,
+    "back": 3
+   },
+   "anims": {
+    "idle": {
+     "cols": [
+      0
+     ],
+     "fps": 1
+    },
+    "walk": {
+     "cols": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "fps": 8
+    }
+   }
+  }
+ ]
+}

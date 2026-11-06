@@ -1,0 +1,65 @@
+# ==========================================
+# Karaya Realm (.gitignore)
+# ==========================================
+
+# Environment variables & secrets
+.env
+.env.local
+.env.*.local
+*.env
+
+# Runtime / Saved game data (players, guilds, logs)
+game/data/
+game/data-dev/
+*.db
+*.sqlite
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Python caches & virtual environments (tools)
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# Temporary tools previews & slice outputs
+tools/preview_*/
+tools/check_*.png
+tools/*.tmp
+
+# IDE & Editor configs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+
+# Agent / AI tools cache
+.claude/
+.gemini/

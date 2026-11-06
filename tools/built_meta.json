@@ -1,0 +1,465 @@
+{
+  "hero_male": {
+    "cell": [
+      86,
+      151
+    ],
+    "grid": [
+      4,
+      8
+    ],
+    "atlas": "assets/atlas/hero_male.png"
+  },
+  "hero_female": {
+    "cell": [
+      96,
+      152
+    ],
+    "grid": [
+      4,
+      8
+    ],
+    "atlas": "assets/atlas/hero_female.png"
+  },
+  "monsters": {
+    "slime": {
+      "id": "slime",
+      "category": "monster",
+      "atlas": "assets/atlas/slime.png",
+      "cell": [
+        252,
+        202
+      ],
+      "grid": [
+        4,
+        3
+      ],
+      "anchor": "bottom-center",
+      "world_height": 1.3,
+      "rows": {
+        "front": 0,
+        "side": 1,
+        "back": 2
+      },
+      "side_faces": "left",
+      "anims": {
+        "idle": {
+          "cols": [
+            0
+          ],
+          "fps": 1
+        },
+        "walk": {
+          "cols": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "fps": 7
+        }
+      }
+    },
+    "wolf": {
+      "id": "wolf",
+      "category": "monster",
+      "atlas": "assets/atlas/wolf.png",
+      "cell": [
+        228,
+        202
+      ],
+      "grid": [
+        4,
+        3
+      ],
+      "anchor": "bottom-center",
+      "world_height": 2.0,
+      "rows": {
+        "front": 0,
+        "side": 1,
+        "back": 2
+      },
+      "side_faces": "left",
+      "anims": {
+        "idle": {
+          "cols": [
+            0
+          ],
+          "fps": 1
+        },
+        "walk": {
+          "cols": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "fps": 7
+        }
+      }
+    },
+    "goblin": {
+      "id": "goblin",
+      "category": "monster",
+      "atlas": "assets/atlas/goblin.png",
+      "cell": [
+        196,
+        202
+      ],
+      "grid": [
+        4,
+        3
+      ],
+      "anchor": "bottom-center",
+      "world_height": 2.0,
+      "rows": {
+        "front": 0,
+        "side": 1,
+        "back": 2
+      },
+      "side_faces": "right",
+      "anims": {
+        "idle": {
+          "cols": [
+            0
+          ],
+          "fps": 1
+        },
+        "walk": {
+          "cols": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "fps": 7
+        }
+      }
+    },
+    "dragon": {
+      "id": "dragon",
+      "category": "monster",
+      "atlas": "assets/atlas/dragon.png",
+      "cell": [
+        238,
+        202
+      ],
+      "grid": [
+        4,
+        3
+      ],
+      "anchor": "bottom-center",
+      "world_height": 4.2,
+      "rows": {
+        "front": 0,
+        "side": 1,
+        "back": 2
+      },
+      "side_faces": "left",
+      "anims": {
+        "idle": {
+          "cols": [
+            0
+          ],
+          "fps": 1
+        },
+        "walk": {
+          "cols": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "fps": 7
+        }
+      }
+    },
+    "ghost": {
+      "id": "ghost",
+      "category": "monster",
+      "atlas": "assets/atlas/ghost.png",
+      "cell": [
+        198,
+        202
+      ],
+      "grid": [
+        4,
+        3
+      ],
+      "anchor": "bottom-center",
+      "world_height": 2.5,
+      "rows": {
+        "front": 0,
+        "side": 1,
+        "back": 2
+      },
+      "side_faces": "left",
+      "anims": {
+        "idle": {
+          "cols": [
+            0
+          ],
+          "fps": 1
+        },
+        "walk": {
+          "cols": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "fps": 7
+        }
+      }
+    },
+    "orc": {
+      "id": "orc",
+      "category": "monster",
+      "atlas": "assets/atlas/orc.png",
+      "cell": [
+        176,
+        202
+      ],
+      "grid": [
+        4,
+        3
+      ],
+      "anchor": "bottom-center",
+      "world_height": 2.9,
+      "rows": {
+        "front": 0,
+        "side": 1,
+        "back": 2
+      },
+      "side_faces": "left",
+      "anims": {
+        "idle": {
+          "cols": [
+            0
+          ],
+          "fps": 1
+        },
+        "walk": {
+          "cols": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "fps": 7
+        }
+      }
+    },
+    "skeleton": {
+      "id": "skeleton",
+      "category": "monster",
+      "atlas": "assets/atlas/skeleton.png",
+      "cell": [
+        160,
+        202
+      ],
+      "grid": [
+        4,
+        3
+      ],
+      "anchor": "bottom-center",
+      "world_height": 2.4,
+      "rows": {
+        "front": 0,
+        "side": 1,
+        "back": 2
+      },
+      "side_faces": "right",
+      "anims": {
+        "idle": {
+          "cols": [
+            0
+          ],
+          "fps": 1
+        },
+        "walk": {
+          "cols": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "fps": 7
+        }
+      }
+    }
+  },
+  "npcs": {
+    "npc_guard": {
+      "id": "npc_guard",
+      "category": "npc",
+      "atlas": "assets/atlas/npc_guard.png",
+      "cell": [
+        84,
+        152
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "anchor": "bottom-center",
+      "world_height": 2.3,
+      "rows": {
+        "front": 0,
+        "left": 1,
+        "right": 2,
+        "back": 3
+      },
+      "anims": {
+        "idle": {
+          "cols": [
+            0
+          ],
+          "fps": 1
+        },
+        "walk": {
+          "cols": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "fps": 8
+        }
+      }
+    },
+    "npc_guide": {
+      "id": "npc_guide",
+      "category": "npc",
+      "atlas": "assets/atlas/npc_guide.png",
+      "cell": [
+        86,
+        152
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "anchor": "bottom-center",
+      "world_height": 2.3,
+      "rows": {
+        "front": 0,
+        "left": 1,
+        "right": 2,
+        "back": 3
+      },
+      "anims": {
+        "idle": {
+          "cols": [
+            0
+          ],
+          "fps": 1
+        },
+        "walk": {
+          "cols": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "fps": 8
+        }
+      }
+    },
+    "npc_fighter": {
+      "id": "npc_fighter",
+      "category": "npc",
+      "atlas": "assets/atlas/npc_fighter.png",
+      "cell": [
+        116,
+        152
+      ],
+      "grid": [
+        4,
+        4
+      ],
+      "anchor": "bottom-center",
+      "world_height": 2.4,
+      "rows": {
+        "front": 0,
+        "left": 1,
+        "right": 2,
+        "back": 3
+      },
+      "anims": {
+        "idle": {
+          "cols": [
+            0
+          ],
+          "fps": 1
+        },
+        "walk": {
+          "cols": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "fps": 8
+        }
+      }
+    }
+  },
+  "weapons": {
+    "weapon_bow": {
+      "cell": [
+        220,
+        260
+      ],
+      "grid": [
+        4,
+        1
+      ],
+      "image": "assets/weapons/weapon_bow.png"
+    },
+    "weapon_sword1": {
+      "cell": [
+        178,
+        260
+      ],
+      "grid": [
+        4,
+        1
+      ],
+      "image": "assets/weapons/weapon_sword1.png"
+    },
+    "weapon_sword2": {
+      "cell": [
+        165,
+        260
+      ],
+      "grid": [
+        4,
+        1
+      ],
+      "image": "assets/weapons/weapon_sword2.png"
+    },
+    "weapon_mace": {
+      "cell": [
+        178,
+        260
+      ],
+      "grid": [
+        4,
+        1
+      ],
+      "image": "assets/weapons/weapon_mace.png"
+    },
+    "weapon_staff": {
+      "cell": [
+        88,
+        260
+      ],
+      "grid": [
+        4,
+        1
+      ],
+      "image": "assets/weapons/weapon_staff.png"
+    }
+  }
+}
